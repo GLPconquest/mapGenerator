@@ -4,23 +4,23 @@ import java.util.Arrays;
 
 public class Biome {
 	private static final int DIMENSIONS = 3;
-	private Block[][] biome;
+	private Block[][] blocks;
 	
 	public Biome() {
-		biome = new Block[DIMENSIONS][DIMENSIONS];
+		setBlocks(new Block[DIMENSIONS][DIMENSIONS]);
+	}
+	
+	public Block[][] getBlocks() {
+		return blocks;
 	}
 
-	public Block[][] getBiome() {
-		return biome;
-	}
-
-	public void setBiome(Block[][] biome) {
-		this.biome = biome;
+	public void setBlocks(Block[][] blocks) {
+		this.blocks = blocks;
 	}
 
 	@Override
 	public String toString() {
-		return "Biome [biome=" + Arrays.toString(biome) + "]";
+		return "Biome [blocks=" + Arrays.toString(blocks) + "]";
 	}
-	
+
 }

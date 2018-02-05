@@ -4,22 +4,23 @@ import java.util.Arrays;
 
 public class Block {
 	private static final int DIMENSIONS = 3;
-	private int[][] block;
+	private int[][] squares;
 	
 	public Block() {
-		block = new int[DIMENSIONS][DIMENSIONS];
+		setSquares(new int[DIMENSIONS][DIMENSIONS]);
 	}
 
-	public int[][] getBlock() {
-		return block;
+	public int[][] getSquares() {
+		return squares;
 	}
 
-	public void setBlock(int[][] block) {
-		this.block = block;
+	public void setSquares(int[][] squares) {
+		this.squares = squares;
 	}
 
 	@Override
 	public String toString() {
-		return "Block [block=" + Arrays.toString(block) + "]";
+		return "Block [squares=" + Arrays.toString(squares) + "]";
 	}
+
 }

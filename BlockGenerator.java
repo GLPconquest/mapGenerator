@@ -48,11 +48,11 @@ public class BlockGenerator {
 		for(int i = 0; i<3; i++) {
 			for (int j = 0; j<3; j++) {
 				if (i!=1 || j!=1) {
-					block.getBlock()[i][j] = sng.generate(probabilities);
+					block.getSquares()[i][j] = sng.generate(probabilities);
 				}
 			}
 		}
-		block.getBlock()[1][1] = mainSquare;
+		block.getSquares()[1][1] = mainSquare;
 		return block;
 	}
 	

@@ -7,23 +7,15 @@ public class SquareNumberGenerator {
 		setRng(new RandomNumberGenerator());
 	}
 	
-	public int generate(int[] probabilities) {
-		int dice = getRng().generate(20, 0);
-		if(dice<probabilities[0]) {
-			return 0;
+	public int generate(int[] probabilities){
+		int dice = getRng().generate(19, 0);
+		int stats = probabilities[0];
+		int square = 0;
+		while (dice>=stats && square<probabilities.length) {
+			square++;
+			stats+=probabilities[square];
 		}
-		else if(dice<probabilities[0]+probabilities[1]) {
-			return 1;
-		}
-		else if(dice<probabilities[0]+probabilities[1]+probabilities[2]) {
-			return 2;
-		}
-		else if(dice<probabilities[0]+probabilities[1]+probabilities[2]+probabilities[3]) {
-			return 3;
-		}
-		else {
-			return 4;
-		}
+		return square;
 	}
 
 	public RandomNumberGenerator getRng() {
